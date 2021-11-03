@@ -23,11 +23,12 @@ for (int i = 10; i > 1; i--)
 int resto = sum % 11;
 if (resto < 2)
 {
-    if (cpf_num[9] != 0 || cpf_num[9] != (11-resto))
+    if (cpf_num[9] != 0)
     {
         return;
     }
-}
+}else if (cpf_num[9] != (11-resto))
+    return;
 sum = 0;
 for (int i = 11; i > 1; i--)
 {
@@ -36,9 +37,11 @@ for (int i = 11; i > 1; i--)
 resto = sum % 11;
 if (resto < 2)
 {
-    if (cpf_num[9] != 0 || cpf_num[9] != (11-resto))
+    if (cpf_num[10] != 0)
     {
         return;
     }
-}
+}else if (cpf_num[10] != (11-resto))
+    return;
+
 Console.WriteLine("Cpf Valido");
